@@ -29,8 +29,24 @@ public class Main {
                     break;
                 case 2:
                     // Marcar una tarea como completada
-                    System.out.println("Primera versió, marcat no implementat.");
-                    break; // Placeholder
+                    System.out.print("Introduce el número de la tarea a marcar como completada: ");
+                    int taskIndex = scanner.nextInt();
+                    if (taskIndex >= 0 && taskIndex < tasks.size()) {
+                        tasks.get(taskIndex).setCompleted(true);
+                        System.out.println("Tarea marcada como completada: " + tasks.get(taskIndex));
+                    } else {
+                        System.out.println("Índex de tarea no vàlid.");
+                    }
+                    break;
+                case 3:
+                    // Mostrar la lista de tareas
+                    System.out.println("Lista de tareas:");
+                    for (int i = 0; i < tasks.size(); i++) {
+                        System.out.println(i + ": " + tasks.get(i));
+                    }
+                    break;
+                case 4:
+                    System.exit(0);
             }
         }
     }
